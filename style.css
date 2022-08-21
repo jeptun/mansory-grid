@@ -1,0 +1,83 @@
+:root {
+  --black: 0 0% 0%;
+  --dark: 0 0% 9%;
+  --white: 0 0% 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: hsl(var(--white));
+  font-family: "Inter", sans-serif;
+}
+html,
+body {
+  overflow: hidden;
+  background-color: hsl(var(--black));
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 2vw;
+  z-index: 10;
+  mix-blend-mode: difference;
+}
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 0.625rem;
+  padding: 6.25rem 2vw;
+}
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.post {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+img {
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(var(--dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+.post:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.fa-heart {
+  font-size: 2rem;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
